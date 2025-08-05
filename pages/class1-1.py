@@ -71,6 +71,9 @@ print("輸入結束")
 print(int(a) + 10)
 print(type(a))  # 證明透過input()輸入內容都是字串
 
-
 a = int(input("請輸入半徑"))
 print(a * a * 3.14)
+
+a = input("請輸入其中國語成績")
+b = input("請輸入期末國語成績")
+print("國語成績平均為", (int(a) + int(b)) / 2)
