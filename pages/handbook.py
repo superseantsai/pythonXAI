@@ -391,3 +391,222 @@ else:
 如果你想要我幫你把這些變成「小抄」、「筆記圖卡」或「PDF檔」，隨時可以跟我說！我也可以幫你出幾題練習喔 😄
     """
     )
+
+with st.expander("Class3筆記"):
+    st.write(
+        """
+當然可以！以下是用**國小六年級**也可以輕鬆看懂的方式，幫你整理這段程式碼內容。用簡單的話說明每個部分的意思和用法👇
+
+---
+
+## 🧠 你學到的 Python 知識整理
+
+---
+
+### 🟢 基本功能
+
+#### `import streamlit as st`
+
+意思是「叫 Python 幫我們載入 Streamlit 這個工具」，這樣我們就可以用 `st.xxx` 來做出網頁。
+
+---
+
+### 🟡 輸入數字
+
+```python
+number = st.number_input("請輸入數字", step=1, min_value=0, max_value=100)
+```
+
+* 這是「讓使用者輸入數字」的工具。
+* `step=1` 代表只能輸入整數。
+* `min_value=0`, `max_value=100` 是設定最小值0，最大值100。
+
+---
+
+### 🟣 顯示文字
+
+```python
+st.markdown(f"您輸入的數字是: {number}")
+```
+
+* 把使用者輸入的數字顯示出來。
+* `f"..."` 裡面可以放變數，用 `{}` 表示。
+
+---
+
+### 🟠 判斷分數等級 (成績判斷)
+
+```python
+if score >= 90:
+    st.write("A")
+elif 80 <= score < 90:
+    st.write("B")
+...
+```
+
+這段會：
+
+* 讓使用者輸入分數
+* 判斷成績屬於 A、B、C、D 或 F
+
+---
+
+### 🔘 按鈕功能
+
+```python
+if st.button("按我一下", key="balloons"):
+    st.balloons()
+```
+
+* 這是按鈕功能。
+* `st.button()` 做一個按鈕。
+* 按了以後可以放氣球 (`st.balloons()`) 或下雪 (`st.snow()`)
+
+> ❗你寫太多 `st.balloons()`，其實只要寫一次就可以！
+
+✅ 建議簡化成這樣就好：
+
+```python
+if st.button("放氣球", key="balloons"):
+    st.balloons()
+if st.button("下雪", key="snow"):
+    st.snow()
+```
+
+---
+
+### 🔁 迴圈 for (重複做的動作)
+
+```python
+for i in range(5):
+    print(i)
+```
+
+* `for` 會重複執行，`range(5)` 就是從 0 到 4。
+* 每次做的東西都會被 `print()` 出來。
+
+你也可以這樣用：
+
+```python
+for i in range(1, 10, 2):
+    print(i)  # 會印出 1, 3, 5, 7, 9
+```
+
+---
+
+### 🔺 數字金字塔
+
+```python
+for i in range(1, number + 1):
+    a = str(i) * i
+    st.write(a)
+```
+
+* 如果輸入3，就會顯示：
+
+```
+1  
+22  
+333  
+```
+
+（數字越多，金字塔越高）
+
+---
+
+### 📦 list 列表（像是裝東西的盒子）
+
+```python
+a = [90, 50, 20, 80, 70]
+print(a[0])  # 取出第一個
+```
+
+* List 就是裝很多資料的「清單」。
+* 可以是數字、文字、布林值等。
+
+---
+
+### 💡 list 的用法整理
+
+| 功能            | 說明             |
+| ------------- | -------------- |
+| `L[0]`        | 取第1個元素         |
+| `L[1:4]`      | 取第2到第4個（不含第5個） |
+| `L.append(x)` | 把 x 加到最後面      |
+| `L.remove(x)` | 把第一個 x 刪掉      |
+| `L.pop(i)`    | 把第 i 個刪掉       |
+| `len(L)`      | 算 list 有幾個東西   |
+
+---
+
+### 📌 call by value / call by reference
+
+* **Call by value（數字）**：變數互不影響
+
+```python
+a = 5
+b = a
+b = 6
+print(a)  # 還是 5
+```
+
+* **Call by reference（list）**：會互相影響
+
+```python
+a = [1, 2, 3]
+b = a
+b[0] = 2
+print(a)  # 變成 [2, 2, 3]
+```
+
+✅ 如果你不想被影響，要用 `a.copy()` 複製一份。
+
+---
+
+### 🧮 平均成績計算
+
+```python
+avg = (midterm[1] + final[1]) / 2
+```
+
+* 這是算第2位同學的期中和期末平均。
+
+---
+
+### 🧑‍🤝‍🧑 名字跟編號
+
+```python
+name = ["Amy", "Mandy", "Peter"]
+index = 1
+for i in name:
+    print(f"{index}號是{i}")
+    index += 1
+```
+
+* 印出：
+
+```
+1號是Amy  
+2號是Mandy  
+3號是Peter  
+```
+
+---
+
+## 🎉 恭喜你！
+
+你已經會用 Python 寫：
+
+* 數字輸入
+* 判斷成績
+* 做金字塔
+* 建立 list 清單
+* 用 for 迴圈重複做事
+* 做按鈕、放氣球和下雪！
+
+---
+
+如果你想要我幫你把這些做成一份**簡單的教學手冊或圖文版筆記**，也可以再告訴我！😊
+
+    """
+    )
